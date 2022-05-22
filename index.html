@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</header>
+<main>
+
+    <body>
+        <form action="results.html" method="GET">
+            <h1 id="title">Good Vibes Form</h1>
+            <div class="master-div-style">
+                <div class="form-rows">
+                    <p><b>Tell us something positive that happened to you today.</b></p>
+
+                    <!-- User starts with entering name, email (validates correct format)
+                    and password (obfuscated) -->
+                    <section id="nameEmailPWText">
+                        <label class="labels" for="name">Name</label>
+                        <input class="input-fields" type="text" name="name" id="name" placeholder="Enter your name"
+                            required>
+                        <label class="labels" for="email">Email</label>
+                        <input class="input-fields" type="email" name="email" id="email"
+                            placeholder="Enter your email address" required>
+                        <label class="labels" for="password">Password</label>
+                        <input class="input-fields" type="password" name="password" id="password" required>
+                    </section>
+
+                    <!-- Changed the wording of the on screen message, 
+                        to avoid rating the previous password question!! -->
+                    <section id="vibeRatingNumber">
+                        <label class="labels" for="vibe">Rate your experience (from 1-10)?</label>
+                        <input class="input-fields" type="number" name="vibe" id="vibe" min="1" max="10">
+                    </section>
+
+                    <!-- Try as I might, just couldn't get the label 
+                        and dropdown to align on the page, 
+                        just couldn't figure it out. Had to compromise -->
+                    <section id="locationDropdown">
+                        <label class="labels">Where did it happen?</label>
+                        <select class="dropdown" name="location" id="location">
+                            <option label="At Home" value="Home"></option>
+                            <option label="At Work" value="Work"></option>
+                            <option label="In the Pub" value="Pub"></option>
+                        </select>
+                    </section>
+
+                    <!-- Again!!! Couldn't get the radio selectors to flow 
+                    down the page, left them going horizontally. -->
+                    <section id="timeOfDayRadio">
+                        <div class="radio">
+                            <label for="morning"></label>At what time of day did this happen?
+                            <input type="radio" name="timeOfDay" id="morning" value="morning">Morning
+
+                            <label for="afternoon"></label>
+                            <input type="radio" name="timeOfDay" id="afternoon" value="afternoon">Afternoon
+
+                            <label for="evening"></label>
+                            <input type="radio" name="timeOfDay" id="evening" value="evening">Evening
+                        </div>
+                    </section>
+                    <br>
+
+                    <!-- Experimented this time with referencing the 
+                        CSS 'fields' decorator at the top 'Section' level. 
+                        Still finding the formatting tricky. -->
+                    <section class="fields" id="emotionsSelect">
+                        <div class="user-selection">
+                            <label>What emotions did you experience?<br>
+                                (Select all that apply)</label>
+                        </div>
+                        <div class="user-selection">
+                            <div class="fields">
+                                <label class="fields" for="excited">Excited</label>
+                                <input class="user-selection" type="checkbox" name="excited" id="excited">
+                                <div>
+                                    <label class="fields" for="humbled">Humbled</label>
+                                    <input class="user-selection" type="checkbox" name="humbled" id="humbled">
+                                </div>
+                                <div>
+                                    <label class="fields" for="elated">Elated</label>
+                                    <input class="user-selection" type="checkbox" name="elated" id="elated">
+                                </div>
+                                <div>
+                                    <label class="fields" for="loved">Loved</label>
+                                    <input class="user-selection" type="checkbox" name="loved" id="loved">
+                                </div>
+                                <div>
+                                    <label class="fields" for="enthusiastic">Enthusiastic</label>
+                                    <input class="user-selection" type="checkbox" name="enthusiastic" id="enthusiastic">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <br>
+
+                <!-- Fairly straightforward, the label should be in line 
+                    with the top of the test box, but I am tired and 
+                    it's well after midnight. May work on it later, 
+                    but I doubt it, just have to be 'Minimal Viable Product' -->
+                <section id="vibeDesc">
+                    <div class="labels">
+                        <label for="vibeDesc"><label>Please describe your positive
+                                experience.</label>
+                    </div>
+                    <textarea placeholder="Enter your experience here..." class="fields" name=" vibeDesc" id="vibeDesc"
+                        rows="3"></textarea>
+                </section>
+
+                <!-- Submits form data to a page where some JavaScript code 
+                    displays the form data. I ripped the code off from a guy called
+                    Kyle on his YouTube channel, "Web Dev Simplified", 
+                    https://www.youtube.com/watch?v=fNcJuPIZ2WE
+                    I don't pretend to know how it works
+                    but proves the form is storing the data. -->
+                </section>
+                <button class="button" type="submit">Submit</button>
+                </section>
+            </div>
+            </div>
+        </form>
+    </body>
+</main>
+
+</html>
